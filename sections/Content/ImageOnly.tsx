@@ -14,7 +14,7 @@ export default function ImageSection({
        {image && 
         <Image
           width={640}
-          class="w-full lg:w-3/4 object-fit z-10"
+          class="w-full lg:w-3/4 object-fit z-10 mx-auto rounded-lg"
           sizes="(max-width: 640px) 100vw, 30vw"
           src={image}
           alt={image}
