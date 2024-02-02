@@ -8,7 +8,7 @@ export interface Props {
    * @format textarea
    */
   description: string;
-  image: ImageWidget;
+  image?: ImageWidget;
   placement: "left" | "right";
   cta?: {
     href?: string;
@@ -41,7 +41,7 @@ export default function ImageSection({
         } gap-12 md:gap-20 text-left items-center z-10 ${
           disableSpacing?.top ? "" : "pt-12 lg:pt-28"
         } ${disableSpacing?.bottom ? "" : "pb-12 lg:pb-28"}`}
-      >
+      > {image && 
         <Image
           width={640}
           class="w-full lg:w-1/2 object-fit z-10"
@@ -50,7 +50,7 @@ export default function ImageSection({
           alt={image}
           decoding="async"
           loading="lazy"
-        />
+        />}
         <div class="w-full lg:w-1/2 space-y-2 lg:space-y-4 lg:max-w-xl gap-4 z-10">
           <p class="text-[40px] leading-[110%] font-semibold">
             {title}
