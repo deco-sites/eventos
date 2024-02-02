@@ -34,6 +34,7 @@ export default defineApp(async (_req, ctx) => {
                   }
 
                     section {
+                        width: 100vw;
                         height: 100vh;
                         display: flex;
                         justify-content: center;
