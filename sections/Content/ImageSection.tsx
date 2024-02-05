@@ -41,22 +41,27 @@ export default function ImageSection({
         } gap-12 md:gap-20 text-left items-center z-10 ${
           disableSpacing?.top ? "" : "pt-12 lg:pt-28"
         } ${disableSpacing?.bottom ? "" : "pb-12 lg:pb-28"}`}
-      > {image && 
-        <Image
-          width={640}
-          class="w-full lg:w-1/2 object-fit z-10"
-          sizes="(max-width: 640px) 100vw, 30vw"
-          src={image}
-          alt={image}
-          decoding="async"
-          loading="lazy"
-        />}
+      >
+        {image &&
+          (
+            <Image
+              width={640}
+              class="w-full lg:w-1/2 object-fit z-10"
+              sizes="(max-width: 640px) 100vw, 30vw"
+              src={image}
+              alt={image}
+              decoding="async"
+              loading="lazy"
+            />
+          )}
         <div class="w-full lg:w-1/2 space-y-2 lg:space-y-4 lg:max-w-xl gap-4 z-10">
           <p class="text-[40px] leading-[110%] font-semibold">
             {title}
           </p>
-          <p class="text-zinc-400 text-[16px] md:text-[18px] leading-[150%]"
-          dangerouslySetInnerHTML={{ __html: description}}>
+          <p
+            class="text-zinc-400 text-[16px] md:text-[18px] leading-[150%]"
+            dangerouslySetInnerHTML={{ __html: description }}
+          >
           </p>
           {cta?.href && cta?.text && (
             <a
