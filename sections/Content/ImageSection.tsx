@@ -5,7 +5,7 @@ import Image from "apps/website/components/Image.tsx";
 export interface Props {
   title: string;
   /**
-   * @format textarea
+   * @format html
    */
   description: string;
   image?: ImageWidget;
@@ -55,8 +55,8 @@ export default function ImageSection({
           <p class="text-[40px] leading-[110%] font-semibold">
             {title}
           </p>
-          <p class="text-zinc-400 text-[16px] md:text-[18px] leading-[150%]">
-            {description}
+          <p class="text-zinc-400 text-[16px] md:text-[18px] leading-[150%]"
+          dangerouslySetInnerHTML={{ __html: description}}>
           </p>
           {cta?.href && cta?.text && (
             <a
